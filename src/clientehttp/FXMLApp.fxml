@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientehttp.FXMLAppController">
+   <children>
+      <ComboBox fx:id="cbOptions" layoutX="22.0" layoutY="28.0" prefHeight="25.0" prefWidth="126.0" />
+      <TextField fx:id="tfURL" layoutX="200.0" layoutY="28.0" prefHeight="25.0" prefWidth="484.0" />
+      <Text layoutX="162.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="URL" />
+      <Button layoutX="695.0" layoutY="28.0" mnemonicParsing="false" onAction="#consultarURL" prefHeight="25.0" prefWidth="91.0" text="Consultar" />
+      <Text layoutX="29.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Respuesta HTTP:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="22.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mostrar contenido:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TabPane layoutX="22.0" layoutY="151.0" prefHeight="412.0" prefWidth="764.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Cabeceras/Headers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="pane1" layoutX="14.0" layoutY="14.0" prefHeight="358.0" prefWidth="737.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Body/Cuerpo">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="pane2" layoutX="14.0" layoutY="14.0" prefHeight="366.0" prefWidth="741.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <RadioButton fx:id="rbRaw" layoutX="173.0" layoutY="116.0" mnemonicParsing="false" text="Raw" />
+      <RadioButton fx:id="rbPretty" layoutX="224.0" layoutY="115.0" mnemonicParsing="false" text="Pretty" />
+      <Text fx:id="txtResponse" layoutX="155.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="256.126953125">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="36.0" layoutX="24.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="764.0" />
+      <Text fx:id="txt1" layoutX="301.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de contenido:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtContentType" layoutX="432.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="219.126953125">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnGuardar" layoutX="662.0" layoutY="112.0" mnemonicParsing="false" onAction="#guardarRespuesta" prefHeight="25.0" prefWidth="124.0" text="Guardar respuesta" />
+   </children>
+</AnchorPane>
