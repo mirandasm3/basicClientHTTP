@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.web.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -9,8 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="815.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="clientehttp.FXMLAppController">
+<AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientehttp.FXMLAppController">
    <children>
       <ComboBox fx:id="cbOptions" layoutX="22.0" layoutY="28.0" prefHeight="25.0" prefWidth="126.0" />
       <TextField fx:id="tfURL" layoutX="200.0" layoutY="28.0" prefHeight="25.0" prefWidth="484.0" />
@@ -28,22 +28,21 @@
       </Text>
       <TabPane layoutX="22.0" layoutY="151.0" prefHeight="412.0" prefWidth="764.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Cabeceras/Headers">
+          <Tab fx:id="tabPaneHeaders" text="Cabeceras/Headers">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane fx:id="pane1" layoutX="14.0" layoutY="14.0" prefHeight="358.0" prefWidth="737.0" />
-                     </children>
-                  </AnchorPane>
+                        <WebView fx:id="webViewHeaders" layoutX="14.0" layoutY="201.0" prefHeight="167.0" prefWidth="734.0" />
+                        <Text fx:id="txtAreaRawResponse" layoutX="19.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="725.13671875" />
+                     </children></AnchorPane>
             </content>
           </Tab>
-          <Tab text="Body/Cuerpo">
+          <Tab fx:id="tabPaneBody" text="Cuerpo/Body">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane fx:id="pane2" layoutX="14.0" layoutY="14.0" prefHeight="366.0" prefWidth="741.0" />
-                     </children>
-                  </AnchorPane>
+                        <WebView fx:id="webViewBody" layoutX="14.0" layoutY="14.0" prefHeight="353.0" prefWidth="739.0" />
+                     </children></AnchorPane>
             </content>
           </Tab>
         </tabs>
@@ -61,11 +60,11 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text fx:id="txtContentType" layoutX="432.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="219.126953125">
+      <Text fx:id="txtContentType" layoutX="434.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="197.126953125">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="11.0" />
          </font>
       </Text>
-      <Button layoutX="662.0" layoutY="112.0" mnemonicParsing="false" onAction="#guardarRespuesta" prefHeight="25.0" prefWidth="124.0" text="Guardar respuesta" />
+      <Button fx:id="btnGuardar" layoutX="662.0" layoutY="112.0" mnemonicParsing="false" onAction="#guardarRespuesta" prefHeight="25.0" prefWidth="124.0" text="Guardar respuesta" />
    </children>
 </AnchorPane>
